@@ -56,7 +56,7 @@ async def verify(data: CompareRequest, x_api_key: str = Header(None)):
         diff = hash1 - hash2
         
         return {
-            "identical": diff <= 5,
+            "identical": diff <= 1,
             "distance": int(diff),
             "engine": "pHash"
         }
