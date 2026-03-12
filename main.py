@@ -33,7 +33,7 @@ async def verify(data: CompareRequest, x_api_key: str = Header(None)):
         raise HTTPException(status_code=500, detail="Server configuration error")
 
     if x_api_key != API_KEY:
-        raise HTTPException(status_code=401, detail="Acces neautorizat")
+        raise HTTPException(status_code=401, detail=f"Debug: Primit='{x_api_key}', Așteptat='{API_KEY}'")
     
     try:
         headers = {"User-Agent": "Mozilla/5.0"}
